@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulinian Student Profile System</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9f0;
+    color: #173b12;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #006400, #003b00);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    border-bottom: 6px solid #e6c400;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    color: #ffeb3b;
+}
+
+.container {
+    width: 92%;
+    max-width: 850px;
+    margin: 25px auto;
+    display: grid;
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e6d66a;
+    border-top: 5px solid #e6c400;
+    box-shadow: 0 8px 24px #004d001a;
+}
+
+h2 {
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #64705a;
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c54a;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #e6c400;
+    border-color: #006400;
+}
+
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px;
+    border: 2px solid #006400;
+    border-radius: 8px;
+    background: #e6c400;
+    color: #173b12;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #006400;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.reset-button {
+    margin-top: 10px;
+    background: #edf0df;
+    border-color: #64705a;
+}
+
+.reset-button:hover {
+    background: #64705a;
+    color: white;
+}
+
+.profile-header {
+    background: #f8f9f0;
+    border: 1px solid #e6d66a;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.profile-header h3 {
+    color: #006400;
+    font-size: 23px;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid #eee6a8;
+}
+
+.profile-row span:first-child {
+    color: #64705a;
+}
+
+.profile-row span:last-child {
+    font-weight: bold;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.remark {
+    background: #fff5ad;
+    border-left: 5px solid #e6c400;
+    color: #315b16;
+    padding: 13px;
+    border-radius: 9px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.type-item {
+    background: #f8f9f0;
+    border: 1px solid #e6d66a;
+    border-left: 4px solid #006400;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 12px;
+    overflow-wrap: anywhere;
+}
+
+.type-item strong {
+    color: #006400;
+}
+
+.type-value {
+    font-family: monospace;
+    color: #315b16;
+}
+
+.empty-message {
+    color: #64705a;
+}
+
+footer {
+    background: #004d00;
+    border-top: 5px solid #e6c400;
+    text-align: center;
+    padding: 25px 12px;
+    color: white;
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+    .card {
+        padding: 17px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .profile-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .profile-row span:last-child {
+        text-align: left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Paulinian Student Profile System</h1>
+    <p>Green &amp; Gold | JavaScript Data Types Performance Task</p>
+    <p>St. Paul University Dumaguete Inspired</p>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Student Information</h2>
+        <p class="subtitle">Create your personal student profile.</p>
+
+        <form id="profileForm">
+
+            <label for="name">Full Name</label>
+            <input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="course">Course / Strand</label>
+            <input
+                id="course"
+                type="text"
+                placeholder="e.g. ICT"
+                required
+            >
+
+            <label for="hobby">Hobby</label>
+            <input
+                id="hobby"
+                type="text"
+                placeholder="Enter your hobby"
+                required
+            >
+
+            <label for="birthYear">Birth Year</label>
+            <input
+                id="birthYear"
+                type="number"
+                min="1900"
+                required
+            >
+
+            <label for="gradeLevel">Grade Level</label>
+            <input
+                id="gradeLevel"
+                type="number"
+                min="1"
+                max="12"
+                required
+            >
+
+            <label for="average">Average Grade</label>
+            <input
+                id="average"
+                type="number"
+                min="0"
+                max="100"
+                step="0.01"
+                required
+            >
+
+            <label for="career">Future Career</label>
+            <input
+                id="career"
+                type="text"
+                placeholder="Leave blank if undecided"
+            >
+
+            <label for="enrolled">Enrollment Status</label>
+            <select id="enrolled">
+                <option value="yes">Currently Enrolled</option>
+                <option value="no">Not Enrolled</option>
+            </select>
+
+            <button type="submit">Generate My Profile</button>
+            <button type="reset" class="reset-button">Clear Form</button>
+
+        </form>
+    </section>
+
+    <section class="card" id="result">
+        <h2>Your Student Profile</h2>
+        <p class="empty-message">
+            Fill out the form to display your profile here.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>JavaScript Data Types</h2>
+        <p class="subtitle">All 8 required JavaScript data types.</p>
+
+        <div id="dataTypes">
+            Generate your profile to see the data types.
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>ICT 12 | Interactive Student Profile System</p>
+    <p>Green and Gold Paulinian-Inspired Theme</p>
+</footer>
+
+<script src="Surname_FirstName_JSDataTypes.js"></script>
+
+</body>
+</html>
